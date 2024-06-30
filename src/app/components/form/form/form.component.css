@@ -1,0 +1,20 @@
+
+
+.login form{
+
+     width: 60%;
+     margin: auto;
+
+}
+
+.alert{
+        
+     font-size: 50px;
+     font-family: andalus;
+}
+
+label{
+
+    font-family: andalus;
+    font-size: 35px;
+}

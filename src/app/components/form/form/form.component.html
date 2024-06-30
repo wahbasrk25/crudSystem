@@ -1,0 +1,58 @@
+
+
+
+<div class="container login">
+
+    <div class="alert alert-danger text-center">Form Register From Employee</div>
+
+<form>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1 one">Enter ID</label>
+        <input type="text"   [(ngModel)]="mycommand.id" name="id" class="form-control" id="for" id="exampleInputPassword1">
+      </div>
+  
+    <div class="form-group">
+      <label for="exampleInputPassword1 one">Enter Name</label>
+      <input type="text" [(ngModel)]="mycommand.name" name="name" class="form-control" id="one" id="exampleInputPassword1">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1 tow">Enter Rating</label>
+        <input type="text" [(ngModel)]="mycommand.rating" name="rating" class="form-control" id="tow" id="exampleInputPassword1">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1 three">Enter Address</label>
+        <input type="text" [(ngModel)]="mycommand.address" name="address" class="form-control" id="three" id="exampleInputPassword1">
+    </div>
+   
+    <button type="submit" *ngIf="!myCondetion" (click)="createCommand()" class="btn btn-primary w-100">Create</button>
+    <button type="submit" *ngIf="myCondetion"  (click)="updateCommand()" class="btn btn-warning  w-100">Update</button>
+</form>
+ 
+ <div class="space"></div>
+
+ <div class="alert alert-danger text-center " *ngIf="myData.length == 0" >Please Register Your Data</div>
+
+<table class="table table-dark table-borderde text-center" *ngIf="myData.length>0" >
+   <tr>
+     <th>ID</th>
+     <th>Name</th>
+     <th>Rating</th>
+     <th>Address</th>
+     <th>Action</th>
+   </tr>
+   <tr *ngFor="let item of myData">
+    <td>{{item.id}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.rating}}</td>
+    <td>{{item.address}}</td>
+    <td>
+        <button class="btn btn-danger " (click)="deleteCommand(item.id)">Delete</button>
+        <button class="btn btn-warning ml-2" (click)="editCommand(item)">Update</button>
+    </td>
+   </tr>
+</table>
+
+<div class="space"></div>
+
+</div>
